@@ -1,8 +1,13 @@
+export { parseCert, listCerts };
+
+const RA_ORG_ID = '71790185';
+const CERT_SITE_URL = `${location.protocol}//${location.host}/certificate.html`;
+
 let params = new URLSearchParams(document.location.search.substring(1));
 const CERT_ID = params.get('id');
 const [CERT_YEAR, CERT_NUM] = CERT_ID.split('-');
 
-DATA_URL = `./data/${CERT_YEAR}.json`;
+const DATA_URL = `./data/${CERT_YEAR}.json`;
 
 async function parseCert() {
     let response = await fetch(DATA_URL);
@@ -26,5 +31,28 @@ function bindParams(data) {
     }
 }
 
+async function listCerts() {
+    let response = await fetch(DATA_URL);
+    if (!response.ok) {
+        return;
+    }
+    let certs = await response.json();
+    document.body.className = 'cert';
 
-parseCert();
+    let divList = document.getElementById('certs');
+
+    for (let num in certs) {
+        let cert = certs[num];
+        const row = document.createElement('div');
+        const certId = `${CERT_YEAR}-${num}`;
+        const certURL = `${CERT_SITE_URL}?id=${certId}`;
+        row.innerHTML = `
+            ${num}. <a href="${certURL}">${cert.name}</a>
+            <a href="https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${cert['cert-name']}&organizationId=${RA_ORG_ID}&issueYear=${CERT_YEAR}
+&issueMonth=10&&certUrl=${encodeURIComponent(certURL)}&certId=${certId}">
+                <img class="li-button" src="images/linkedin.png " alt="LinkedIn Add to Profile button">
+            </a>
+        `;
+        divList.appendChild(row);
+    }
+}

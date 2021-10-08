@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Reskill Americans Certificate List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/certificate.css'>
+</head>
+<body>
+    <img src="images/ra-thumbnail.png" class="logo">
+    <h1>Reskill Americans Bootcamp<br>Certificates of Completion</h1>
+    <div class="no-cert">Error: Invalid certificate list.</div>
+    <div id="certs" class="has-cert">
+    </div>
+    
+    <script defer type="module">
+        import { listCerts } from './scripts/certificate.js';
+        listCerts();
+    </script>
+</body>
+</html>

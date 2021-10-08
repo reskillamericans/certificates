@@ -5,7 +5,6 @@
     <title>Reskill Americans Certificate</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/certificate.css'>
-    <script defer src='scripts/certificate.js'></script>
 </head>
 <body>
     <img src="images/ra-thumbnail.png" class="logo">
@@ -22,6 +21,10 @@
             Issued on <span id="issue-date"></span>.
         </div>
     </div>
-
+    
+    <script defer type="module">
+        import { parseCert } from './scripts/certificate.js';
+        parseCert();
+    </script>
 </body>
 </html>

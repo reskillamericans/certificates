@@ -5,6 +5,12 @@ body {
     margin: auto;
 }
 
+h1:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 body.cert .no-cert {
     display: none;
 }
@@ -34,10 +40,14 @@ div {
 .logo {
     width: 124px;
     float: left;
-    margin: 0 1em;
+    margin: 0 1em 1em 0;
 }
 
 .footer {
     font-size: 0.7em;
+}
 
+.li-button {
+    height: 1em;
+    margin: 0 1em;
 }
