@@ -1,7 +1,8 @@
 export { parseCert, listCerts };
 
 const RA_ORG_ID = '71790185';
-const CERT_SITE_URL = `${location.protocol}//${location.host}/certificate.html`;
+const rootURL = location.host + (location.host.endsWith('github.io') ? '/certificates' : '');
+const CERT_SITE_URL = `${location.protocol}//${rootURL}/certificate.html`;
 
 let params = new URLSearchParams(document.location.search.substring(1));
 const CERT_ID = params.get('id');
