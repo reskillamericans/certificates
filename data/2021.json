@@ -1,13 +1,12 @@
 {
     "1": {
         "cert-name": "Front-end Developer",
-        "issue-date": "October 23, 2021",
+        "issue-date": "2021-10-23T07:00:00.000Z",
         "name": "Mike Koss"
     },
-
     "2": {
         "cert-name": "Back-end Developer",
-        "issue-date": "October 23, 2021",
+        "issue-date": "2021-10-23T07:00:00.000Z",
         "name": "Juwon Isola-Osobu"
     }
 }
