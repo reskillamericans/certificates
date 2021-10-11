@@ -13,3 +13,9 @@ https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME
     &issueMonth=10
     &certUrl=https%3A%2F%2Freskillamericans.github.io/certificates/certificate?id=2021-1
     &certId=2021-1
+    
+# Certificate URLs
+
+The list of class of 2021 certificates can be found here:
+
+https://reskillamericans.github.io/certificates/cert-list?id=2021
