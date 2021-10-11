@@ -25,11 +25,21 @@ async function parseCert() {
 
 function bindParams(data) {
     for (let prop in data) {
+        if (prop.endsWith('-date')) {
+            data[prop] = longDateString(data[prop]);
+        }
         let span = document.getElementById(prop);
         if (span !== null) {
             span.textContent = data[prop];
         }
     }
+}
+
+let longDateFormat = new Intl.DateTimeFormat("en-us", {month: "long", day: "numeric", year: "numeric"});
+
+function longDateString(dateString) {
+    let d = Date.parse(dateString);
+    return longDateFormat.format(d);
 }
 
 async function listCerts() {
