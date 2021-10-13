@@ -1,15 +1,14 @@
 body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.3em;
+    color: rgb(1, 33, 105);
     width: 800px;
     margin: 1em auto;
-    padding: 0.5em;
-
-    border: 6px solid #092f6e;
 }
 
 h1 {
     margin: 0;
+    font-size: 1.5em;
 }
 
 h1:after {
@@ -28,6 +27,13 @@ body.cert .no-cert {
 
 body:not(.cert) .has-cert {
     display: none;
+}
+
+div.content {
+    border: 6px solid #092f6e;
+    margin: 1em auto;
+    padding: 0.5em;
+    background-color: #FFF8E6;
 }
 
 div {
