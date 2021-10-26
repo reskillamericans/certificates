@@ -149,3 +149,7 @@ ol {
 ol > :first-child {
     margin-top: 0;
 }
+
+h3, h4 {
+    text-align: center;
+}

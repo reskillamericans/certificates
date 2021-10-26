@@ -61,19 +61,39 @@ async function listCerts() {
         return;
     }
     let certs = await response.json();
+
+
+    // Alphabetical by name (case sensitive).
     certs.sort((a, b) => a.name < b.name ? -1 : 1);
+
+    let groups = groupArrayBy(certs, 'cert-name');
 
     document.body.className = 'cert';
     let divList = document.getElementById('certs');
 
+    for (let [certName, certs] of Object.entries(groups)) {
+        const heading = document.createElement('h4');
+        heading.textContent = certName;
+        divList.appendChild(heading);
+
+        appendList(divList, certs);
+    }
+
+
+}
+
+// Add ordered list of cert links to div
+function appendList(div, certs) {
+    const ol = document.createElement('ol');
     for (let cert of certs) {
         const row = document.createElement('div');
         const certId = `${CERT_YEAR}-${cert.id}`;
         const certURL = `${CERT_SITE_URL}?id=${certId}`;
         row.innerHTML = `
-            <li><a href="${certURL}&button=true">${cert.name}</a>`;
-        divList.appendChild(row);
+            <li><a href="${certURL}&button=true">${cert.name}</a></li>`;
+        ol.appendChild(row);
     }
+    div.appendChild(ol);
 }
 
 function linkedInButton(cert) {
@@ -84,4 +104,21 @@ function linkedInButton(cert) {
             <img class="li-button" src="images/linkedin.png " alt="LinkedIn Add to Profile button">
         </a>`;
 
+}
+
+// Given array of objects, grop by unique value of a prop.
+// Retain stable ordering within group.
+function groupArrayBy(objects, prop) {
+    let groups = {};
+
+    for (let obj of objects) {
+        let key = obj[prop];
+        if (groups[key] === undefined) {
+            groups[key] = [];
+        }
+        groups[key].push(obj);
+    }
+
+    console.log(`Groups: ${Object.keys(groups)}`);
+    return groups;
 }
