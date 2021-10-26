@@ -131,3 +131,9 @@ div.issuer {
 div.container {
     max-width: 800px;
 }
+
+div.container p {
+    font-size: 1.3rem;
+    margin: 0.8em auto;
+    line-height: 1.4;
+}
