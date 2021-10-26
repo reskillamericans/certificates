@@ -7,6 +7,7 @@ const CERT_SITE_URL = `${location.protocol}//${rootURL}/certificate.html`;
 let params = new URLSearchParams(document.location.search.substring(1));
 const CERT_ID = params.get('id');
 const [CERT_YEAR, CERT_NUM] = CERT_ID.split('-').map(v => parseInt(v));
+const showButton = params.get('button') === "true";
 
 const DATA_URL = `./data/${CERT_YEAR}.json`;
 
@@ -25,6 +26,12 @@ async function parseCert() {
     document.body.className = 'cert';
 
     bindParams(cert);
+
+    if (showButton) {
+        document.body.insertAdjacentHTML('beforeend',
+        `<div>Add this certificate to your LinkedIn profile by
+        clicking here: ` + linkedInButton(cert) + '</div>');
+    }
 }
 
 function bindParams(data) {
@@ -53,8 +60,9 @@ async function listCerts() {
         return;
     }
     let certs = await response.json();
-    document.body.className = 'cert';
+    certs.sort((a, b) => a.name < b.name ? -1 : 1);
 
+    document.body.className = 'cert';
     let divList = document.getElementById('certs');
 
     for (let cert of certs) {
@@ -62,12 +70,17 @@ async function listCerts() {
         const certId = `${CERT_YEAR}-${cert.id}`;
         const certURL = `${CERT_SITE_URL}?id=${certId}`;
         row.innerHTML = `
-            ${cert.id}. <a href="${certURL}">${cert.name}</a>
-            <a href="https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${cert['cert-name']}&organizationId=${RA_ORG_ID}&issueYear=${CERT_YEAR}
-&issueMonth=10&&certUrl=${encodeURIComponent(certURL)}&certId=${certId}">
-                <img class="li-button" src="images/linkedin.png " alt="LinkedIn Add to Profile button">
-            </a>
-        `;
+            <li><a href="${certURL}&button=true">${cert.name}</a>`;
         divList.appendChild(row);
     }
+}
+
+function linkedInButton(cert) {
+    const certId = `${CERT_YEAR}-${cert.id}`;
+    const certURL = `${CERT_SITE_URL}?id=${certId}`;
+    return `
+        <a href="https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${cert['cert-name']}&organizationId=${RA_ORG_ID}&issueYear=${CERT_YEAR}&issueMonth=10&&certUrl=${encodeURIComponent(certURL)}&certId=${certId}">
+            <img class="li-button" src="images/linkedin.png " alt="LinkedIn Add to Profile button">
+        </a>`;
+
 }

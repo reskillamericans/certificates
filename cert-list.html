@@ -7,12 +7,68 @@
     <link rel='stylesheet' type='text/css' media='screen' href='styles/certificate.css'>
 </head>
 <body>
-    <img src="images/ra-thumbnail.png" class="logo">
-    <h1>Reskill Americans Bootcamp<br>Certificates of Completion</h1>
-    <div class="no-cert">Error: Invalid certificate list.</div>
-    <div id="certs" class="has-cert">
+    <div class="container">
+        <img src="images/ra-thumbnail.png" class="logo">
+        <h2>Reskill Americans Bootcamp<br>Certificates of Completion</h1>
+        <div style="clear:left"></div>
+        <div class="no-cert">Error: Invalid certificate list.</div>
+        <div class="has-cert">
+            <p>
+                Dear Reskill Americans Participants,
+            </p>
+            <p>
+                <b>You made it!</b>
+            </p>
+            <p>
+                Congratulations to everyone who completed our program!  It's been
+                an amazing experience for all of us at Reskill Americans, and
+                we are so proud of what you have accomplished.
+            </p>
+            <p>
+                Below you will find a link to your individualized certificate of
+                completion.  Find your name and click the link.  Once there,
+                you will find an <i>Add to Profile</i> button you can use to add this
+                certificate to your LinkedIn profile!
+            </p>
+            <p>
+                Thanks again for spending the last seven months with us.  While
+                our formal instruction is over, we would love to stay in touch
+                and continue to assist you in the job hunting process.
+            </p>
+            <div class="sigs"
+                 style="flex-wrap: wrap; column-gap: 40px;border-collapse: ;">
+                <div class="signature">
+                    <span class="sig-name">Mike Koss</span><br>
+                    <span class="sig-title">Co-Founder</span>
+                </div>
+                <div class="signature">
+                    <span class="sig-name">Femi Akinde</span><br>
+                    <span class="sig-title">Co-Founder</span>
+                </div>
+                <div class="signature">
+                    <span class="sig-name">Pamela Price</span><br>
+                    <span class="sig-title">Director of Education</span>
+                </div>
+                <div class="signature">
+                    <span class="sig-name">Juwon Isola-Osobu</span><br>
+                    <span class="sig-title">Program Director</span>
+                </div>
+                <div class="signature">
+                    <span class="sig-name">Ashley Chapman</span><br>
+                    <span class="sig-title">Communications Director</span>
+                </div>
+                <div class="signature">
+                    <span class="sig-name">Seyi Onifade and the Zuri Team</span><br>
+                    <span class="sig-title">Instructors and TAs</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h3 style="text-align: center" class="has-cert">Class of 2021</h3>
+        <ol id="certs" class="has-cert" style="columns: 2">
+        </ol>
     </div>
-    
+
     <script defer type="module">
         import { listCerts } from './scripts/certificate.js';
         listCerts();

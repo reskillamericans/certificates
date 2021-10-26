@@ -124,6 +124,10 @@ div.issuer {
 }
 
 .li-button {
-    height: 1rem;
     margin: 0 1rem;
+    vertical-align: middle;
+}
+
+div.container {
+    max-width: 800px;
 }
