@@ -57,13 +57,12 @@ async function listCerts() {
 
     let divList = document.getElementById('certs');
 
-    for (let num in certs) {
-        let cert = certs[num];
+    for (let cert of certs) {
         const row = document.createElement('div');
-        const certId = `${CERT_YEAR}-${num}`;
+        const certId = `${CERT_YEAR}-${cert.id}`;
         const certURL = `${CERT_SITE_URL}?id=${certId}`;
         row.innerHTML = `
-            ${num}. <a href="${certURL}">${cert.name}</a>
+            ${cert.id}. <a href="${certURL}">${cert.name}</a>
             <a href="https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${cert['cert-name']}&organizationId=${RA_ORG_ID}&issueYear=${CERT_YEAR}
 &issueMonth=10&&certUrl=${encodeURIComponent(certURL)}&certId=${certId}">
                 <img class="li-button" src="images/linkedin.png " alt="LinkedIn Add to Profile button">
