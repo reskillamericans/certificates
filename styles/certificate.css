@@ -26,7 +26,7 @@ body:not(.cert) .has-cert {
 }
 
 div.cert {
-    max-width: 800px;
+    width: 800px;
     height: calc(1545/2000 * 800px);
     background-image: url("../images/cert-background.png");
     background-size: contain;
