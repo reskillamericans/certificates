@@ -5,8 +5,9 @@ const rootURL = location.host + (location.host.endsWith('github.io') ? '/certifi
 const CERT_SITE_URL = `${location.protocol}//${rootURL}/certificate.html`;
 
 let params = new URLSearchParams(document.location.search.substring(1));
-const CERT_ID = params.get('id');
-const [CERT_YEAR, CERT_NUM] = CERT_ID.split('-').map(v => parseInt(v));
+const ID_PARTS = params.get('id').split('-');
+const CERT_YEAR = ID_PARTS[0];
+const CERT_ID = ID_PARTS.slice(1).join('-');
 const showButton = params.get('button') === "true";
 
 const DATA_URL = `./data/${CERT_YEAR}.json`;
@@ -17,10 +18,10 @@ async function parseCert() {
         return;
     }
     let certs = await response.json();
-    let cert = certs.find(cert => cert['id'] == CERT_NUM);
+    let cert = certs.find(cert => cert['id'] == CERT_ID);
     console.log(cert);
     if (cert === undefined) {
-        console.log(`Can't find certificate with id=${CERT_NUM}`);
+        console.log(`Can't find certificate with id=${CERT_ID}`);
         return;
     }
     document.body.className = 'cert';
