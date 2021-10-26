@@ -6,7 +6,7 @@ const CERT_SITE_URL = `${location.protocol}//${rootURL}/certificate.html`;
 
 let params = new URLSearchParams(document.location.search.substring(1));
 const CERT_ID = params.get('id');
-const [CERT_YEAR, CERT_NUM] = CERT_ID.split('-');
+const [CERT_YEAR, CERT_NUM] = CERT_ID.split('-').map(v => parseInt(v));
 
 const DATA_URL = `./data/${CERT_YEAR}.json`;
 
@@ -16,11 +16,15 @@ async function parseCert() {
         return;
     }
     let certs = await response.json();
-    if (certs[CERT_NUM] === undefined) {
+    let cert = certs.find(cert => cert['id'] == CERT_NUM);
+    console.log(cert);
+    if (cert === undefined) {
+        console.log(`Can't find certificate with id=${CERT_NUM}`);
         return;
     }
     document.body.className = 'cert';
-    bindParams(certs[CERT_NUM]);
+
+    bindParams(cert);
 }
 
 function bindParams(data) {
@@ -28,14 +32,15 @@ function bindParams(data) {
         if (prop.endsWith('-date')) {
             data[prop] = longDateString(data[prop]);
         }
-        let span = document.getElementById(prop);
-        if (span !== null) {
+        let spans = document.querySelectorAll(`#${prop}`);
+        for (let span of spans) {
             span.textContent = data[prop];
         }
     }
 }
 
-let longDateFormat = new Intl.DateTimeFormat("en-us", {month: "long", day: "numeric", year: "numeric"});
+let longDateFormat = new Intl.DateTimeFormat("en-us",
+    {month: "long", day: "numeric", year: "numeric"});
 
 function longDateString(dateString) {
     let d = Date.parse(dateString);

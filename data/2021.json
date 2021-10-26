@@ -1,17 +1,20 @@
-{
-    "1": {
-        "cert-name": "Front-end Developer",
+[
+    {
+        "id": 101,
+        "cert-name": "Front-End Developer",
         "issue-date": "2021-10-23T07:00:00.000Z",
         "name": "Mike Koss"
     },
-    "2": {
-        "cert-name": "Back-end Developer",
+    {
+        "id": 102,
+        "cert-name": "Back-End Developer",
         "issue-date": "2021-10-23T07:00:00.000Z",
         "name": "Juwon Isola-Osobu"
     },
-    "3": {
-        "cert-name": "Designer",
+    {
+        "id": 100,
+        "cert-name": "UI/UX Designer",
         "issue-date": "2021-10-23T07:00:00.000Z",
         "name": "Ashley Chapman"
     }
-}
+]
