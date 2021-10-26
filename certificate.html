@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <title>Reskill Americans Certificate</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Tangerine:wght@700&display=swap"
+        rel="stylesheet">
+
     <link rel='stylesheet' type='text/css' media='screen' href='styles/certificate.css'>
 </head>
+
 <body>
-    <div class="content">
-        <img src="images/ra-thumbnail.png" class="logo">
-        <h1>Reskill Americans<br>Software Development Program<br>Certificate of Completion</h1>
-        <div class="no-cert">Error: Invalid certificate id.</div>
-        <div id="cert" class="has-cert">
-            This is to certify that <span id="name"></span> has successfully completed the Reskill American's seven
-            month software development program as a:
-            <div class="course">
-                <span id="cert-name"></span>
+    <div class="no-cert">Error: Invalid certificate id.</div>
+    <div class="cert has-cert">
+        <div class="cert-body">
+            <h1>Reskill Americans</h1>
+            <div id="name"></div>
+            <div class="description">
+                is hereby awarded this certificate for successful completion
+                of <span class="org">Reskill&nbsp;Americans'</span> seven-month
+            </div>
+            <div class="course" id="cert-name"></div>
+            <div class="description">
+                training program from March 15, 2021 through October 23, 2021.
             </div>
             <div class="footer">
-                Issued by <a href="https://reskillamericans.org">Reskill Americans</a><br>
-                <span id="issue-date"></span>
+                <div class="sigs">
+                    <div class="signature">
+                        <span class="sig-name">Mike Koss</span><br>
+                        <span class="sig-title">Co-Founder</span>
+                    </div>
+                    <div class="signature">
+                        <span class="sig-name">Pamela Price</span><br>
+                        <span class="sig-title">Director of Education</span>
+                    </div>
+                </div>
+                <div class="issuer">
+                    Issued by <a target="_blank" href="https://reskillamericans.org">Reskill Americans</a><br>
+                    <span id="issue-date"></span>
+                </div>
             </div>
         </div>
     </div>
@@ -29,4 +53,5 @@
         parseCert();
     </script>
 </body>
+
 </html>
