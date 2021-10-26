@@ -137,3 +137,15 @@ div.container p {
     margin: 0.8em auto;
     line-height: 1.4;
 }
+
+ol {
+    margin-left: 90px;
+    columns: 300px 2;
+    column-gap: 20px;
+}
+
+/* Lists don't align w/o this. */
+
+ol > :first-child {
+    margin-top: 0;
+}
