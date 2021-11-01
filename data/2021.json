@@ -735,12 +735,24 @@
         "id": "rsa-233",
         "cert-name": "Front-End Developer",
         "issue-date": "2021-10-23T07:00:00.000Z",
-        "name": "Derek Uzo"
+        "name": "Derek Uzoh"
     },
     {
         "id": "rsa-234",
         "cert-name": "Back-End Developer",
         "issue-date": "2021-10-23T07:00:00.000Z",
         "name": "Alexandria Baynes"
+    },
+    {
+        "id": "rsa-235",
+        "cert-name": "Front-End Developer",
+        "issue-date": "2021-11-01T07:00:00.000Z",
+        "name": "Alejandra Gomez"
+    },
+    {
+        "id": "rsa-236",
+        "cert-name": "Back-End Developer",
+        "issue-date": "2021-11-01T07:00:00.000Z",
+        "name": "Alana Andres"
     }
 ]
