@@ -754,5 +754,47 @@
         "cert-name": "Back-End Developer",
         "issue-date": "2021-11-01T07:00:00.000Z",
         "name": "Alana Andres"
+    },
+    {
+        "id": "rsa-237",
+        "cert-name": "Front-End Developer",
+        "issue-date": "2021-10-23T07:00:00.000Z",
+        "name": "Issa Day-Simmons"
+    },
+    {
+        "id": "rsa-238",
+        "cert-name": "Front-End Developer",
+        "issue-date": "2021-10-23T07:00:00.000Z",
+        "name": "Sammy Elfatrany"
+    },
+    {
+        "id": "rsa-239",
+        "cert-name": "Front-End Developer",
+        "issue-date": "2021-10-23T07:00:00.000Z",
+        "name": "Arion Robinson"
+    },
+    {
+        "id": "rsa-240",
+        "cert-name": "Back-End Developer",
+        "issue-date": "2021-10-23T07:00:00.000Z",
+        "name": "Jessica Lam"
+    },
+    {
+        "id": "rsa-241",
+        "cert-name": "Front-End Developer",
+        "issue-date": "2021-10-23T07:00:00.000Z",
+        "name": "Ilyana Yates"
+    },
+    {
+        "id": "rsa-242",
+        "cert-name": "UI/UX Designer",
+        "issue-date": "2021-10-23T07:00:00.000Z",
+        "name": "VeAngela Ashley"
+    },
+    {
+        "id": "rsa-243",
+        "cert-name": "Back-End Developer",
+        "issue-date": "2021-10-23T07:00:00.000Z",
+        "name": "Alexandria Baynes"
     }
 ]
