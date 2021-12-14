@@ -651,7 +651,7 @@
         "id": "rsa-219",
         "cert-name": "UI/UX Designer",
         "issue-date": "2021-10-23T07:00:00.000Z",
-        "name": "Akinbulejo busayo"
+        "name": "Akinbulejo Busayo"
     },
     {
         "id": "rsa-220",
@@ -790,11 +790,5 @@
         "cert-name": "UI/UX Designer",
         "issue-date": "2021-10-23T07:00:00.000Z",
         "name": "VeAngela Ashley"
-    },
-    {
-        "id": "rsa-243",
-        "cert-name": "Back-End Developer",
-        "issue-date": "2021-10-23T07:00:00.000Z",
-        "name": "Alexandria Baynes"
     }
 ]
